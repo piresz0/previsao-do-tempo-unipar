@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#F8F9FA">
+
+    <!-- Minha Foto -->
+    <ImageView
+        android:id="@+id/image_profile"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/minha_foto"
+        android:contentDescription="Foto do Renan"
+        android:layout_marginBottom="24dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/circle_background" />
+
+    <!-- Nome -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Renan Pires Da Silva"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#1A1A1A"
+        android:layout_marginBottom="8dp" />
+
+    <!-- RA -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RA: 60001230"
+        android:textSize="18sp"
+        android:textColor="#555"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Curso -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Análise e Desenvolvimento de Sistemas"
+        android:textSize="16sp"
+        android:textColor="#777"
+        android:layout_marginBottom="16dp" />
+
+    <!-- UNIPAR -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UNIPAR EAD"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:textColor="#6C4AB6" />
+
+</LinearLayout>
