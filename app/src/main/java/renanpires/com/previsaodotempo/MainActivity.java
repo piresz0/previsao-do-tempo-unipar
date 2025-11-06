@@ -6,8 +6,11 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;  // ← ADICIONE!
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.journeyapps.barcodescanner.CaptureActivity;
+import com.google.zxing.integration.android.IntentIntegrator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,10 +19,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Configurar ViewPager2 + TabLayout
+        // FAB
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(view -> scanQRCode());
+
+        // ViewPager + Tabs
         ViewPager2 viewPager = findViewById(R.id.viewPager);
         TabLayout tabLayout = findViewById(R.id.tabLayout);
-
         viewPager.setAdapter(new ViewPagerAdapter(this));
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
@@ -31,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
                 tab.setIcon(R.drawable.ic_map);
             }
         }).attach();
+    }
+
+    private void scanQRCode() {
+        new IntentIntegrator(this)
+                .setOrientationLocked(false)
+                .setPrompt("Escaneie o QR Code da cidade")
+                .setCaptureActivity(CaptureActivity.class)
+                .initiateScan();
     }
 
     @Override
