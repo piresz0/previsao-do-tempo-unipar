@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Previsão do Tempo"
@@ -24,6 +25,12 @@
             android:name=".AboutActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
+        <uses-permission android:name="android.permission.INTERNET" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC7jUYOAc-2-dORN_2TUmdMFfhkRSlLpwA" />
     </application>
 
 </manifest>
