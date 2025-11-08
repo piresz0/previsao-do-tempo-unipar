@@ -29,7 +29,7 @@ public class WeatherFragment extends Fragment {
         tvTitle = view.findViewById(R.id.tvTitle);
         atualizarTitulo(); // ← Mostra "Previsão para 7 dias"
 
-        // Dados mock (sem cidade no início)
+
         weatherList = new ArrayList<>();
         weatherList.add(new WeatherItem("Seg", "--°C", "Aguardando cidade...", android.R.drawable.ic_menu_info_details));
         weatherList.add(new WeatherItem("Ter", "--°C", "Aguardando cidade...", android.R.drawable.ic_menu_info_details));

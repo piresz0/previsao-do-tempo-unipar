@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void buscarPrevisao(String cidade) {
-        String apiKey = "f6bbd8fdf0d6ddbe0fd125b7ef1eb83e"; // ← CHAVE
+        String apiKey = "f6bbd8fdf0d6ddbe0fd125b7ef1eb83e";
         String url = "https://api.openweathermap.org/data/2.5/forecast?q="
                 + cidade + "&appid=" + apiKey + "&units=metric&lang=pt_br";
 
@@ -94,12 +94,18 @@ public class MainActivity extends AppCompatActivity {
                             String desc = weather.getString("description");
                             desc = Character.toUpperCase(desc.charAt(0)) + desc.substring(1);
 
-                            String dia = switch (i / 8) {
-                                case 0 -> "Hoje";
-                                case 1 -> "Amanhã";
-                                case 2 -> "Depois";
-                                default -> "Dia " + (i / 8);
-                            };
+                            // IF/ELSE COMPATÍVEL COM JAVA 8
+                            String dia;
+                            int diaNum = i / 8;
+                            if (diaNum == 0) {
+                                dia = "Hoje";
+                            } else if (diaNum == 1) {
+                                dia = "Amanhã";
+                            } else if (diaNum == 2) {
+                                dia = "Depois";
+                            } else {
+                                dia = "Dia " + diaNum;
+                            }
 
                             novaLista.add(new WeatherItem(dia, temp, desc, android.R.drawable.ic_menu_compass));
                         }

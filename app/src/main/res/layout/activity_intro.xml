@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@android:drawable/ic_menu_compass"
+        android:src="@drawable/imagem_nuvem"
         android:contentDescription="Logo do App" />
 
     <TextView
